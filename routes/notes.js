@@ -3,7 +3,7 @@ const path = require('path')
 
 
 
-router.get('/notes', (req, res) => {
+router.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname,'../public/notes.html'))
 })
 
