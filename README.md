@@ -48,3 +48,7 @@ Link to website:
 
 https://fakenote.herokuapp.com
 
+## Mock-Up
+
+![alt text](./assets/11-express-homework-demo-01.png)
+![alt text](./assets/11-express-homework-demo-02.png)
