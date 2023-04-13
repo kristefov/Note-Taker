@@ -2,12 +2,10 @@ const express = require('express');
 const path = require('path');
 const notesRouter = require('./routes/notes')
 const apiRouter = require('./routes/api')
-const notes = require('./db/db.json')
-const fs = require('fs');
-const uuid = require('uuid')
 
 
-const PORT = 3001
+
+const PORT = process.env.PORT || 3001
 
 const app = express();
 
@@ -15,29 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 app.use('/notes', notesRouter)
-app.use('/notes', apiRouter)
+app.use('/api/notes/', apiRouter)
 
-
-
-
-app.get('/api/notes', (req, res) => {
-  res.json(notes)
-})
-
-app.post('/api/notes', (req, res) => {
-  req.body.id = uuid.v4()
-  notes.push(req.body)
-
-  fs.writeFile('./db/db.json', JSON.stringify(notes), (err) => {
-     res.send('Note Saved')
-  })
- 
-})
-
-app.delete('/api/notes', (req, res) => {
-  
-}
-)
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname,'./public/index.html'))
