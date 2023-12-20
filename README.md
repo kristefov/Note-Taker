@@ -33,7 +33,7 @@ For and suggestions or contributions you can reach me at my email address or you
 ## Questions
 * Reach me here on my GitHub account.
 
-    [kristiyantefov](https://github.com/kristefov) 
+    [kristefov](https://github.com/kristefov) 
 
 * Reach me on my email address for additional questions.
 
